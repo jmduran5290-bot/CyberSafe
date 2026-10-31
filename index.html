@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSafe | Cybersecurity Awareness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">🛡️</div>
+            <div>
+                <h2>CyberSafe</h2>
+                <small>Stay Smart. Stay Safe.</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <button class="nav-link active" data-page="dashboard">🏠 Dashboard</button>
+            <button class="nav-link" data-page="learning">📚 Learning Hub</button>
+            <button class="nav-link" data-page="quiz">📝 Cyber Quiz</button>
+            <button class="nav-link" data-page="threat">🔎 Threat Checker</button>
+            <button class="nav-link" data-page="password">🔐 Password Checker</button>
+            <button class="nav-link" data-page="missions">🎯 Cyber Missions</button>
+            <button class="nav-link" data-page="redflags">🚩 Spot the Red Flags</button>
+            <button class="nav-link" data-page="simulator">🎮 Cyber Safety Simulator</button>
+            <button class="nav-link" data-page="tips">💡 Safety Tips</button>
+            <button class="nav-link" data-page="about">ℹ️ About</button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2026 CyberSafe</p>
+            <small>Cybersecurity Awareness for Students</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">CYBERSAFE LEARNING PLATFORM</p>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="topbar-badge">🛡️ Stay Protected</div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section class="page active" id="dashboard">
+            <div class="welcome-banner">
+                <div>
+                    <p class="eyebrow">WELCOME TO CYBERSAFE</p>
+                    <h2>Your Digital Safety Journey Starts Here!</h2>
+                    <p>Learn how to recognize online threats and protect yourself in the digital world.</p>
+                    <button class="primary-btn" data-go="learning">Start Learning →</button>
+                </div>
+                <div class="welcome-icon">🛡️</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">📚</span>
+                    <p>Completed Lessons</p>
+                    <h2 id="lessonCount">0</h2>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <p>Total XP</p>
+                    <h2 id="xpCount">0</h2>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎯</span>
+                    <p>Completed Missions</p>
+                    <h2 id="missionCount">0</h2>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏆</span>
+                    <p>Game Activities</p>
+                    <h2 id="gameCount">0</h2>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR ACHIEVEMENT</p>
+                        <h2>Learning Progress</h2>
+                    </div>
+                    <span id="progressText">0% Completed</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <p class="muted">Complete lessons and missions to improve your progress.</p>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE CYBERSAFE</p>
+                    <h2>Featured Activities</h2>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span>🚩</span>
+                    <h3>Spot the Red Flags</h3>
+                    <p>Test your ability to identify suspicious messages.</p>
+                    <button class="text-btn" data-go="redflags">Play Activity →</button>
+                </div>
+                <div class="feature-card">
+                    <span>🎮</span>
+                    <h3>Cyber Safety Simulator</h3>
+                    <p>Make safe decisions in real-life online situations.</p>
+                    <button class="text-btn" data-go="simulator">Start Simulation →</button>
+                </div>
+                <div class="feature-card">
+                    <span>🔎</span>
+                    <h3>Threat Checker</h3>
+                    <p>Check messages for common suspicious warning signs.</p>
+                    <button class="text-btn" data-go="threat">Check a Message →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING HUB -->
+        <section class="page" id="learning">
+            <div class="page-intro">
+                <p class="eyebrow">BUILD YOUR KNOWLEDGE</p>
+                <h2>Cybersecurity Learning Hub</h2>
+                <p>Explore important cybersecurity topics and learn how to stay safe online.</p>
+            </div>
+            <div class="lesson-grid" id="lessonList"></div>
+        </section>
+
+        <!-- CYBER QUIZ -->
+        <section class="page" id="quiz">
+            <div class="page-intro">
+                <p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+                <h2>Cybersecurity Quiz</h2>
+                <p>Answer the questions and see how much you know about online safety.</p>
+            </div>
+            <div class="content-card quiz-card" id="quizBox"></div>
+        </section>
+
+        <!-- THREAT CHECKER -->
+        <section class="page" id="threat">
+            <div class="page-intro">
+                <p class="eyebrow">MESSAGE ANALYSIS</p>
+                <h2>Threat Checker</h2>
+                <p>Check a message for common suspicious phrases and possible phishing warning signs.</p>
+            </div>
+
+            <div class="content-card tool-card">
+                <label for="threatInput">Enter a message to check</label>
+                <textarea id="threatInput" placeholder="Paste or type a message here..."></textarea>
+                <button class="primary-btn" id="checkThreat">Check Message</button>
+                <div id="threatResult" class="result-area" aria-live="polite"></div>
+                <p class="small-note">Educational tool only. This checker looks for selected suspicious patterns and cannot guarantee that a message is safe or dangerous.</p>
+            </div>
+        </section>
+
+        <!-- PASSWORD CHECKER -->
+        <section class="page" id="password">
+            <div class="page-intro">
+                <p class="eyebrow">PROTECT YOUR ACCOUNTS</p>
+                <h2>Password Strength Checker</h2>
+                <p>Learn whether a password meets common strength recommendations.</p>
+            </div>
+
+            <div class="content-card tool-card">
+                <label for="passwordInput">Enter a sample password</label>
+                <input type="password" id="passwordInput" placeholder="Type a sample password">
+                <button class="primary-btn" id="checkPassword">Check Password</button>
+                <div id="passwordResult" class="result-area" aria-live="polite"></div>
+                <p class="small-note">Do not enter your real password. Use a sample password for this educational activity.</p>
+            </div>
+        </section>
+
+        <!-- CYBER MISSIONS -->
+        <section class="page" id="missions">
+            <div class="page-intro">
+                <p class="eyebrow">COMPLETE YOUR CHALLENGES</p>
+                <h2>Cyber Missions</h2>
+                <p>Complete these simple tasks to practice good cybersecurity habits.</p>
+            </div>
+            <div class="content-card">
+                <div id="missionList" class="mission-list"></div>
+            </div>
+        </section>
+
+        <!-- SPOT THE RED FLAGS -->
+        <section class="page" id="redflags">
+            <div class="page-intro">
+                <p class="eyebrow">INTERACTIVE CYBER GAME</p>
+                <h2>🚩 Spot the Red Flags</h2>
+                <p>Read each message carefully. Select all the warning signs you can identify.</p>
+            </div>
+
+            <div class="content-card game-card" id="redFlagsBox"></div>
+        </section>
+
+        <!-- CYBER SAFETY SIMULATOR -->
+        <section class="page" id="simulator">
+            <div class="page-intro">
+                <p class="eyebrow">REAL-LIFE CYBERSECURITY SCENARIOS</p>
+                <h2>🎮 Cyber Safety Simulator</h2>
+                <p>Imagine you are facing an online situation. Choose the safest action.</p>
+            </div>
+
+            <div class="content-card game-card" id="simulatorBox"></div>
+        </section>
+
+        <!-- SAFETY TIPS -->
+        <section class="page" id="tips">
+            <div class="page-intro">
+                <p class="eyebrow">STAY SAFE ONLINE</p>
+                <h2>Cybersecurity Safety Tips</h2>
+                <p>Follow these simple habits to protect your information and online accounts.</p>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tip-card"><span>🔐</span><h3>Use Strong Passwords</h3><p>Create long, unique passwords for your accounts. Avoid reusing the same password.</p></div>
+                <div class="tip-card"><span>🔗</span><h3>Check Links First</h3><p>Inspect unfamiliar links before opening them. Be careful with unexpected messages.</p></div>
+                <div class="tip-card"><span>🔒</span><h3>Enable Two-Factor Authentication</h3><p>Use an additional verification method to help protect your accounts.</p></div>
+                <div class="tip-card"><span>📱</span><h3>Keep Devices Updated</h3><p>Install updates from trusted sources to receive security improvements.</p></div>
+                <div class="tip-card"><span>🙅</span><h3>Never Share OTPs</h3><p>Do not share one-time passwords or verification codes with other people.</p></div>
+                <div class="tip-card"><span>📢</span><h3>Think Before You Share</h3><p>Avoid posting sensitive personal information publicly online.</p></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="page" id="about">
+            <div class="page-intro">
+                <p class="eyebrow">ABOUT THE PROJECT</p>
+                <h2>About CyberSafe</h2>
+                <p>A cybersecurity awareness website designed to help students understand online risks and develop safer digital habits.</p>
+            </div>
+
+            <div class="content-card about-card">
+                <div class="about-icon">🛡️</div>
+                <h2>Stay Smart. Stay Safe.</h2>
+                <p>CyberSafe aims to provide students with accessible cybersecurity information through lessons, quizzes, interactive games, and practical scenarios.</p>
+                <h3>Our Objectives</h3>
+                <ul>
+                    <li>Increase awareness of common online threats.</li>
+                    <li>Teach students how to recognize suspicious messages.</li>
+                    <li>Encourage strong password practices.</li>
+                    <li>Promote responsible and safe internet use.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- LESSON MODAL -->
+<div class="modal" id="lessonModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeModal" aria-label="Close lesson">×</button>
+        <div id="lessonContent"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
